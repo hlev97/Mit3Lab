@@ -10,7 +10,7 @@ import hu.bme.mit.yakindu.analysis.example.IExampleStatemachine;
 
 
 
-public class RunStatechart {
+public class main2 {
 	
 	public static void main(String[] args) throws IOException {
 		ExampleStatemachine s = new ExampleStatemachine();
@@ -42,11 +42,10 @@ public class RunStatechart {
 		
 	}
 
-	public static void print(IExampleStatemachine s) {
-		System.out.println("W = " + s.getSCInterface().getWhiteTime());
-		System.out.println("B = " + s.getSCInterface().getBlackTime());
-	}
-	
+public static void print(IExampleStatemachine s) {
+	System.out.println("W = " + s.getSCInterface().getWhiteTime());
+	System.out.println("B = " + s.getSCInterface().getBlackTime());
+}	
 	private static void readFromConsole(String cmd, ExampleStatemachine s) {
 		switch(cmd) {
 			case "start":
@@ -54,13 +53,13 @@ public class RunStatechart {
 				s.runCycle();
 				print(s);
 				break;
-			case "black":
-				s.raiseBlack();
+			case "white":
+				s.raiseWhite();
 				s.runCycle();
 				print(s);
 				break;
-			case "white":
-				s.raiseWhite();
+			case "black":
+				s.raiseBlack();
 				s.runCycle();
 				print(s);
 				break;
